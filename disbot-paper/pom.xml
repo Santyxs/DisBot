@@ -23,23 +23,18 @@
     </repositories>
 
     <dependencies>
-
-        <!-- Core -->
         <dependency>
             <groupId>db.xenova</groupId>
             <artifactId>disbot-core</artifactId>
             <version>0.1</version>
             <scope>compile</scope>
         </dependency>
-
-        <!-- Paper API -->
         <dependency>
             <groupId>io.papermc.paper</groupId>
             <artifactId>paper-api</artifactId>
             <version>1.21.4-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
-
     </dependencies>
 
     <build>
@@ -62,6 +57,7 @@
                         <configuration>
                             <createDependencyReducedPom>false</createDependencyReducedPom>
                             <shadedArtifactAttached>false</shadedArtifactAttached>
+                            <minimizeJar>true</minimizeJar>
                             <filters>
                                 <filter>
                                     <artifact>*:*</artifact>

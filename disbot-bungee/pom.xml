@@ -23,23 +23,18 @@
     </repositories>
 
     <dependencies>
-
-        <!-- Core -->
         <dependency>
             <groupId>db.xenova</groupId>
             <artifactId>disbot-core</artifactId>
             <version>0.1</version>
             <scope>compile</scope>
         </dependency>
-
-        <!-- BungeeCord API -->
         <dependency>
             <groupId>net.md-5</groupId>
             <artifactId>bungeecord-api</artifactId>
             <version>1.21-R0.4</version>
             <scope>provided</scope>
         </dependency>
-
     </dependencies>
 
     <build>
@@ -58,11 +53,10 @@
                 <executions>
                     <execution>
                         <phase>package</phase>
-                        <goals>
-                            <goal>shade</goal>
-                        </goals>
+                        <goals><goal>shade</goal></goals>
                         <configuration>
                             <createDependencyReducedPom>false</createDependencyReducedPom>
+                            <minimizeJar>true</minimizeJar>
                             <filters>
                                 <filter>
                                     <artifact>*:*</artifact>
