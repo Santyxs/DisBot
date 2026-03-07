@@ -1,0 +1,5 @@
+name: DisBot
+description: Discord bot plugin for BungeeCord
+version: ${project.version}
+author: xenova
+main: db.xenova.bungee.DisBotBungee

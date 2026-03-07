@@ -1,0 +1,29 @@
+# ─────────────────────────────────────────────────────────────────────────
+#  Example command
+#  This is an example command that shows the IP of the Minecraft server.
+#  Usage: db!ip or /ip
+# ─────────────────────────────────────────────────────────────────────────
+
+# The name of the command.
+name: "ip"
+
+# A list of alternative names for the command.
+aliases: []
+
+# A short description of the command.
+description: "Ip to our Minecraft server"
+
+# The message that will be sent when the command is used. You can use Markdown here.
+message: "Join with: `mc.noovlandia.online`"
+
+# The message should be sent as an embed. If false, the message will be sent as plain text.
+embed: false
+
+# The color of the embed. You can use hex codes or color names.
+embed-color: "#57F287"
+
+# Only visible to the user who used the command. (Only for slash commands)
+ephemeral: false
+
+# The cooldown time for the command in seconds. This prevents users from spamming the command.
+cooldown: 5

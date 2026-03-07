@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/disbot-bungee/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/disbot-bungee/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/disbot-core/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/disbot-core/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/disbot-core/src/untitled/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/disbot-core/src/untitled/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/disbot-paper/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/disbot-paper/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/disbot-velocity/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/disbot-velocity/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+  </component>
+</project>

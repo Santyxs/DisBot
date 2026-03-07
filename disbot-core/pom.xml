@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>db.xenova</groupId>
+        <artifactId>disbot-parent</artifactId>
+        <version>0.1</version>
+    </parent>
+
+    <artifactId>disbot-core</artifactId>
+    <packaging>jar</packaging>
+
+    <dependencies>
+
+        <!-- JDA -->
+        <dependency>
+            <groupId>net.dv8tion</groupId>
+            <artifactId>JDA</artifactId>
+            <version>6.3.1</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <!-- SnakeYAML -->
+        <dependency>
+            <groupId>org.yaml</groupId>
+            <artifactId>snakeyaml</artifactId>
+            <version>2.6</version>
+        </dependency>
+
+    </dependencies>
+</project>

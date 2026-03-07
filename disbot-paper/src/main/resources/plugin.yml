@@ -1,0 +1,12 @@
+name: DisBot
+version: ${project.version}
+description: Discord bot plugin for Paper
+authors:
+  - Santysx
+api-version: 1.21
+main: db.xenova.paper.DisBotPaper
+
+commands:
+  disbot:
+    description: "Main command for DisBot"
+    usage: "/disbot reload"

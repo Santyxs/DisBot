@@ -1,0 +1,24 @@
+# ────────────────────────────────────────────
+#  Help command
+#  This command shows all available commands.
+#  Usage: db!help or /help
+# ────────────────────────────────────────────
+
+name: "help"
+aliases: []
+description: "Show all available commands"
+
+message: |
+  **Available commands:**
+
+  - `db!ip` or `/ip` → Server IP
+  - `db!help` or `/help` → Show this message
+
+  If you need help, contact the Staff!
+
+embed: true
+embed-color: "#57F287"
+
+ephemeral: false
+
+cooldown: 5

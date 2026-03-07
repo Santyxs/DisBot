@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/disbot-bungee/disbot-bungee.iml" filepath="$PROJECT_DIR$/disbot-bungee/disbot-bungee.iml" />
+      <module fileurl="file://$PROJECT_DIR$/disbot-velocity/disbot-velocity.iml" filepath="$PROJECT_DIR$/disbot-velocity/disbot-velocity.iml" />
+    </modules>
+  </component>
+</project>
