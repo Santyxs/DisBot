@@ -27,6 +27,10 @@ public final class MessageResolver {
             embed.setThumbnail(cmd.thumbnail());
         }
 
+        if (!cmd.image().isBlank() && isValidUrl(cmd.image())) {
+            embed.setImage(cmd.image());
+        }
+
         return embed;
     }
 

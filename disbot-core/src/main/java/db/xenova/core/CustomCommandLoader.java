@@ -64,6 +64,7 @@ public final class CustomCommandLoader {
                 String message       = getString(data, "message", "");
                 String footer        = getString(data, "footer", "");
                 String thumbnail     = getString(data, "thumbnail", "");
+                String image         = getString(data, "image-url", "");
                 String embedColor    = getString(data, "embed-color", DEFAULT_COLOR);
                 boolean embed        = getBoolean(data, "embed");
                 boolean ephemeral    = getBoolean(data, "ephemeral");
@@ -80,7 +81,7 @@ public final class CustomCommandLoader {
                 }
 
                 manager.register(new CustomCommandManager.CustomCommand(
-                        cmdName, aliases, desc, message, footer, thumbnail, embedColor, embed, ephemeral, cooldown
+                        cmdName, aliases, desc, message, footer, thumbnail, image, embedColor, embed, ephemeral, cooldown
                 ));
                 logger.info("Command loaded: " + cmdName
                         + (aliases.isEmpty() ? "" : " (aliases: " + aliases + ")"));
