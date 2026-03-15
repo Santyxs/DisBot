@@ -3,7 +3,6 @@ package db.xenova.discord;
 import db.xenova.core.CustomCommandManager;
 import db.xenova.core.CustomCommandManager.CustomCommand;
 import db.xenova.platform.ProxyAdapter;
-import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
@@ -84,10 +83,7 @@ public final class SlashCommandsListener extends ListenerAdapter {
 
             ReplyCallbackAction reply;
             if (cmd.embed()) {
-                EmbedBuilder embed = new EmbedBuilder()
-                        .setDescription(cmd.message())
-                        .setColor(PrefixCommandsListener.parseColor(cmd.embedColor()));
-                reply = event.replyEmbeds(embed.build());
+                reply = event.replyEmbeds(PrefixCommandsListener.buildEmbed(cmd).build());
             } else {
                 reply = event.reply(cmd.message());
             }

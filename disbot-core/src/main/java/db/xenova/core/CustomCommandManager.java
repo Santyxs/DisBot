@@ -7,17 +7,18 @@ public final class CustomCommandManager {
 
     public record CustomCommand(
             String name,
+            List<String> aliases,
             String description,
             String message,
+            String footer,
+            String thumbnail,
             String embedColor,
             boolean embed,
             boolean ephemeral,
-            int cooldown,
-            List<String> aliases
+            int cooldown
     ) {}
 
     private final Map<String, CustomCommand> commands = new LinkedHashMap<>();
-
     private final Map<String, Long> cooldowns = new ConcurrentHashMap<>();
 
     public void register(CustomCommand command) {

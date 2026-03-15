@@ -16,6 +16,10 @@ message: |
 
   If you need help, contact the Staff!
 
+footer: ""
+
+thumbnail: ""
+
 embed: true
 embed-color: "#57F287"
 

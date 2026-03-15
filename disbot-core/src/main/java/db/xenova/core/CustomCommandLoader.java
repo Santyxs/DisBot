@@ -58,14 +58,16 @@ public final class CustomCommandLoader {
                     continue;
                 }
 
-                String cmdName    = getString(data, "name", "");
-                String desc       = getString(data, "description", "No description");
-                String message    = getString(data, "message", "");
-                String embedColor = getString(data, "embed-color", DEFAULT_COLOR);
-                boolean embed     = getBoolean(data, "embed");
-                boolean ephemeral = getBoolean(data, "ephemeral");
-                int cooldown      = getInt(data);
+                String cmdName       = getString(data, "name", "");
                 List<String> aliases = getStringList(data);
+                String desc          = getString(data, "description", "No description");
+                String message       = getString(data, "message", "");
+                String footer        = getString(data, "footer", "");
+                String thumbnail     = getString(data, "thumbnail", "");
+                String embedColor    = getString(data, "embed-color", DEFAULT_COLOR);
+                boolean embed        = getBoolean(data, "embed");
+                boolean ephemeral    = getBoolean(data, "ephemeral");
+                int cooldown         = getInt(data);
 
                 if (cmdName.isBlank()) {
                     logger.warning("Command without 'name' ignored: " + file.getName());
@@ -78,7 +80,7 @@ public final class CustomCommandLoader {
                 }
 
                 manager.register(new CustomCommandManager.CustomCommand(
-                        cmdName, desc, message, embedColor, embed, ephemeral, cooldown, aliases
+                        cmdName, aliases, desc, message, footer, thumbnail, embedColor, embed, ephemeral, cooldown
                 ));
                 logger.info("Command loaded: " + cmdName
                         + (aliases.isEmpty() ? "" : " (aliases: " + aliases + ")"));

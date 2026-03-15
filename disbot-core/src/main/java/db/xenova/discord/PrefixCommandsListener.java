@@ -62,10 +62,7 @@ public final class PrefixCommandsListener extends ListenerAdapter {
             }
 
             if (cmd.embed()) {
-                EmbedBuilder embed = new EmbedBuilder()
-                        .setDescription(cmd.message())
-                        .setColor(parseColor(cmd.embedColor()));
-                event.getMessage().replyEmbeds(embed.build()).queue();
+                event.getMessage().replyEmbeds(buildEmbed(cmd).build()).queue();
             } else {
                 event.getMessage().reply(cmd.message()).queue();
             }
@@ -75,6 +72,26 @@ public final class PrefixCommandsListener extends ListenerAdapter {
                     .reply("❌ Unknown command: `" + argument + "`.")
                     .queue();
         }
+    }
+
+    static EmbedBuilder buildEmbed(CustomCommand cmd) {
+        EmbedBuilder embed = new EmbedBuilder()
+                .setDescription(cmd.message())
+                .setColor(parseColor(cmd.embedColor()));
+
+        if (!cmd.footer().isBlank()) {
+            embed.setFooter(cmd.footer());
+        }
+
+        if (!cmd.thumbnail().isBlank() && isValidUrl(cmd.thumbnail())) {
+            embed.setThumbnail(cmd.thumbnail());
+        }
+
+        return embed;
+    }
+
+    private static boolean isValidUrl(String url) {
+        return url.startsWith("http://") || url.startsWith("https://");
     }
 
     static Color parseColor(String hex) {
