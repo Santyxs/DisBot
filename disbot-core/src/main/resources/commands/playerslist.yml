@@ -14,6 +14,8 @@ footer: "{date} - {time}"
 
 thumbnail: ""
 
+image: ""
+
 embed: true
 embed-color: "#57F287"
 
