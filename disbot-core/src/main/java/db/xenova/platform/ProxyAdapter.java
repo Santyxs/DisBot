@@ -9,4 +9,6 @@ public interface ProxyAdapter {
     List<String> getOnlinePlayerNames();
 
     String getPlatformName();
+
+    long getStartTime();
 }

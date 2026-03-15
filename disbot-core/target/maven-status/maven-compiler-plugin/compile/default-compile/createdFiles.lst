@@ -1,8 +1,9 @@
-db\xenova\core\CustomCommandLoader.class
 db\xenova\core\CustomCommandManager$CustomCommand.class
 db\xenova\DisBotCore.class
 db\xenova\core\CustomCommandManager.class
-db\xenova\discord\PrefixCommandsListener.class
+db\xenova\discord\MessageResolver.class
 db\xenova\discord\SlashCommandsListener.class
-db\xenova\platform\ProxyAdapter.class
 db\xenova\DisBotCore$ReloadCallback.class
+db\xenova\core\CustomCommandLoader.class
+db\xenova\discord\PrefixCommandsListener.class
+db\xenova\platform\ProxyAdapter.class

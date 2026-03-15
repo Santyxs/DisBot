@@ -3,14 +3,17 @@ package db.xenova.velocity;
 import com.velocitypowered.api.proxy.Player;
 import com.velocitypowered.api.proxy.ProxyServer;
 import db.xenova.platform.ProxyAdapter;
+
 import java.util.List;
 
 public final class VelocityAdapter implements ProxyAdapter {
 
     private final ProxyServer proxy;
+    private final long startTime;
 
-    public VelocityAdapter(ProxyServer proxy) {
-        this.proxy = proxy;
+    public VelocityAdapter(ProxyServer proxy, long startTime) {
+        this.proxy     = proxy;
+        this.startTime = startTime;
     }
 
     public void dispatchConsoleCommand(String command) {
@@ -25,5 +28,9 @@ public final class VelocityAdapter implements ProxyAdapter {
 
     public String getPlatformName() {
         return "Velocity";
+    }
+
+    public long getStartTime() {
+        return startTime;
     }
 }

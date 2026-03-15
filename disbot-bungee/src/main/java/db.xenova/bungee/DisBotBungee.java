@@ -10,7 +10,8 @@ public final class DisBotBungee extends Plugin {
     private DisBotCore core;
 
     public void onEnable() {
-        core = new DisBotCore(getDataFolder(), getLogger(), new BungeeAdapter(getProxy()));
+        long startTime = System.currentTimeMillis();
+        core = new DisBotCore(getDataFolder(), getLogger(), new BungeeAdapter(getProxy(), startTime));
         core.start(reloadCallback ->
                 getProxy().getPluginManager().registerCommand(this, new Command("disbot") {
                     public void execute(net.md_5.bungee.api.CommandSender sender, String[] args) {

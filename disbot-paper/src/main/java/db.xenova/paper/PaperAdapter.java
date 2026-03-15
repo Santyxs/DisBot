@@ -8,6 +8,12 @@ import java.util.List;
 
 public final class PaperAdapter implements ProxyAdapter {
 
+    private final long startTime;
+
+    public PaperAdapter(long startTime) {
+        this.startTime = startTime;
+    }
+
     public void dispatchConsoleCommand(String command) {
         Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command);
     }
@@ -20,5 +26,9 @@ public final class PaperAdapter implements ProxyAdapter {
 
     public String getPlatformName() {
         return "Paper";
+    }
+
+    public long getStartTime() {
+        return startTime;
     }
 }

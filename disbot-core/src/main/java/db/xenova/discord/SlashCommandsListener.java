@@ -17,6 +17,7 @@ public final class SlashCommandsListener extends ListenerAdapter {
     private final String botName;
     private final List<String> allowedChannels;
     private final CustomCommandManager commandManager;
+    private final ProxyAdapter proxy;
     private final Logger logger;
 
     public SlashCommandsListener(String botName,
@@ -27,6 +28,7 @@ public final class SlashCommandsListener extends ListenerAdapter {
         this.botName         = botName;
         this.allowedChannels = allowedChannels;
         this.commandManager  = commandManager;
+        this.proxy           = proxy;
         this.logger          = logger;
     }
 
@@ -83,9 +85,9 @@ public final class SlashCommandsListener extends ListenerAdapter {
 
             ReplyCallbackAction reply;
             if (cmd.embed()) {
-                reply = event.replyEmbeds(PrefixCommandsListener.buildEmbed(cmd).build());
+                reply = event.replyEmbeds(MessageResolver.buildEmbed(cmd, proxy).build());
             } else {
-                reply = event.reply(cmd.message());
+                reply = event.reply(MessageResolver.resolveVariables(cmd.message(), proxy));
             }
 
             reply.setEphemeral(cmd.ephemeral()).queue();

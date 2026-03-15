@@ -12,6 +12,7 @@ message: |
   **Available commands:**
 
   - `db!ip` or `/ip` → Server IP
+  - `db!players` or `/players` → List of online players
   - `db!help` or `/help` → Show this message
 
   If you need help, contact the Staff!

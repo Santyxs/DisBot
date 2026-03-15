@@ -1,0 +1,22 @@
+# ────────────────────────────────────────────
+#  Players command
+#  This command shows the list of online players on the Minecraft server.
+#  Usage: db!players or /players
+# ────────────────────────────────────────────
+
+name: "players"
+aliases: []
+description: "Shows the list of online players on the Minecraft server"
+
+message: "**Online Players ({players}):**\n{playerlist}"
+
+footer: "{date} - {time}"
+
+thumbnail: ""
+
+embed: true
+embed-color: "#57F287"
+
+ephemeral: false
+
+cooldown: 5

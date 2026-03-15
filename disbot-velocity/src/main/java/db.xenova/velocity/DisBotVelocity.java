@@ -37,7 +37,8 @@ public final class DisBotVelocity {
 
     @Subscribe
     public void onProxyInitialize(ProxyInitializeEvent event) {
-        core = new DisBotCore(dataDirectory.toFile(), logger, new VelocityAdapter(proxy));
+        long startTime = System.currentTimeMillis();
+        core = new DisBotCore(dataDirectory.toFile(), logger, new VelocityAdapter(proxy, startTime));
         core.start(reloadCallback ->
                 proxy.getCommandManager().register(
                         proxy.getCommandManager().metaBuilder("disbot").build(),

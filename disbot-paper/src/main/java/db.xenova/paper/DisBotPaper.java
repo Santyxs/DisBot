@@ -14,7 +14,8 @@ public final class DisBotPaper extends JavaPlugin {
     private DisBotCore core;
 
     public void onEnable() {
-        core = new DisBotCore(getDataFolder(), getLogger(), new PaperAdapter());
+        long startTime = System.currentTimeMillis();
+        core = new DisBotCore(getDataFolder(), getLogger(), new PaperAdapter(startTime));
         core.start(reloadCallback -> {
             CommandExecutor executor = (CommandSender sender, Command cmd, String label, String[] args) -> {
                 if (args.length == 0 || !args[0].equalsIgnoreCase("reload")) {

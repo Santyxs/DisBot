@@ -3,13 +3,10 @@ package db.xenova.discord;
 import db.xenova.core.CustomCommandManager;
 import db.xenova.core.CustomCommandManager.CustomCommand;
 import db.xenova.platform.ProxyAdapter;
-import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
-import java.awt.*;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.logging.Logger;
 
 public final class PrefixCommandsListener extends ListenerAdapter {
@@ -18,6 +15,7 @@ public final class PrefixCommandsListener extends ListenerAdapter {
     private final String botName;
     private final List<String> allowedChannels;
     private final CustomCommandManager commandManager;
+    private final ProxyAdapter proxy;
     private final Logger logger;
 
     public PrefixCommandsListener(String prefix,
@@ -30,6 +28,7 @@ public final class PrefixCommandsListener extends ListenerAdapter {
         this.botName         = botName;
         this.allowedChannels = allowedChannels;
         this.commandManager  = commandManager;
+        this.proxy           = proxy;
         this.logger          = logger;
     }
 
@@ -62,43 +61,15 @@ public final class PrefixCommandsListener extends ListenerAdapter {
             }
 
             if (cmd.embed()) {
-                event.getMessage().replyEmbeds(buildEmbed(cmd).build()).queue();
+                event.getMessage().replyEmbeds(MessageResolver.buildEmbed(cmd, proxy).build()).queue();
             } else {
-                event.getMessage().reply(cmd.message()).queue();
+                event.getMessage().reply(MessageResolver.resolveVariables(cmd.message(), proxy)).queue();
             }
             logger.fine("Command executed: " + argument + " by " + event.getAuthor().getName());
         } else {
             event.getMessage()
                     .reply("❌ Unknown command: `" + argument + "`.")
                     .queue();
-        }
-    }
-
-    static EmbedBuilder buildEmbed(CustomCommand cmd) {
-        EmbedBuilder embed = new EmbedBuilder()
-                .setDescription(cmd.message())
-                .setColor(parseColor(cmd.embedColor()));
-
-        if (!cmd.footer().isBlank()) {
-            embed.setFooter(cmd.footer());
-        }
-
-        if (!cmd.thumbnail().isBlank() && isValidUrl(cmd.thumbnail())) {
-            embed.setThumbnail(cmd.thumbnail());
-        }
-
-        return embed;
-    }
-
-    private static boolean isValidUrl(String url) {
-        return url.startsWith("http://") || url.startsWith("https://");
-    }
-
-    static Color parseColor(String hex) {
-        try {
-            return Color.decode(hex);
-        } catch (NumberFormatException e) {
-            return Color.decode("#57F287");
         }
     }
 }
