@@ -22,6 +22,9 @@ footer: "{status} for {uptime}"
 # The thumbnail of the embed (optional, leave empty for no thumbnail)
 thumbnail: "https://cdn.discordapp.com/attachments/112345678901234567/123456789012345678/minecraft.png"
 
+# URL of the image to be displayed in the embed (optional, leave empty for no image)
+image: "https://i.imgur.com/example.png"
+
 # The message should be sent as an embed. If false, the message will be sent as plain text.
 embed: true
 

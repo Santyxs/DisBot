@@ -12,6 +12,7 @@ public final class CustomCommandManager {
             String message,
             String footer,
             String thumbnail,
+            String image,
             String embedColor,
             boolean embed,
             boolean ephemeral,
