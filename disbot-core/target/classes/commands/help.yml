@@ -8,7 +8,7 @@ name: "help"
 aliases: []
 description: "Show all available commands"
 
-message: |
+message: |-
   **Available commands:**
 
   - `db!ip` or `/ip` → Server IP
@@ -20,6 +20,8 @@ message: |
 footer: ""
 
 thumbnail: ""
+
+image: ""
 
 embed: true
 embed-color: "#57F287"
