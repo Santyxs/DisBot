@@ -19,3 +19,14 @@ command-prefix: "db!"
 #   - "123456789012345678"
 #   - "987654321098765432"
 allowed-channels: []
+
+# Server channel IDs (channel IDs where Minecraft messages will be sent)
+server-channel-id:
+  - "YOUR_CHANNEL_ID_HERE"
+  - "YOUR_CHANNEL_ID_HERE"
+
+# Message format for Discord (used for messages sent from Discord to Minecraft)
+discord-to-minecraft-format: "&9[&bDC]&9 {role}  &c{username} &1> &f{message}"
+
+# Minecraft message format (used for messages sent from Minecraft to Discord)
+minecraft-to-discord-format: "**{luckperms_prefix} {username}:** {message}"

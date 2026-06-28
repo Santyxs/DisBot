@@ -10,5 +10,9 @@ public interface ProxyAdapter {
 
     String getPlatformName();
 
-    long getStartTime();
+    long startTime();
+
+    void broadcastMessage(String message);
+
+    String getPlayerPrefix(String playerName);
 }

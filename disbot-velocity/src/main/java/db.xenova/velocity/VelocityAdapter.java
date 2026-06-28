@@ -2,6 +2,8 @@ package db.xenova.velocity;
 
 import com.velocitypowered.api.proxy.Player;
 import com.velocitypowered.api.proxy.ProxyServer;
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
 import db.xenova.platform.ProxyAdapter;
 
 import java.util.List;
@@ -30,7 +32,16 @@ public final class VelocityAdapter implements ProxyAdapter {
         return "Velocity";
     }
 
-    public long getStartTime() {
+    public long startTime() {
         return startTime;
+    }
+
+    public void broadcastMessage(String message) {
+        Component component = LegacyComponentSerializer.legacySection().deserialize(message);
+        proxy.getAllPlayers().forEach(p -> p.sendMessage(component));
+    }
+
+    public String getPlayerPrefix(String playerName) {
+        return "";
     }
 }

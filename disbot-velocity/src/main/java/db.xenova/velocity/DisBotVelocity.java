@@ -4,6 +4,7 @@ import com.google.inject.Inject;
 import com.velocitypowered.api.command.CommandSource;
 import com.velocitypowered.api.command.SimpleCommand;
 import com.velocitypowered.api.event.Subscribe;
+import com.velocitypowered.api.event.player.PlayerChatEvent;
 import com.velocitypowered.api.event.proxy.ProxyInitializeEvent;
 import com.velocitypowered.api.event.proxy.ProxyShutdownEvent;
 import com.velocitypowered.api.plugin.Plugin;
@@ -39,6 +40,7 @@ public final class DisBotVelocity {
     public void onProxyInitialize(ProxyInitializeEvent event) {
         long startTime = System.currentTimeMillis();
         core = new DisBotCore(dataDirectory.toFile(), logger, new VelocityAdapter(proxy, startTime));
+
         core.start(reloadCallback ->
                 proxy.getCommandManager().register(
                         proxy.getCommandManager().metaBuilder("disbot").build(),
@@ -46,7 +48,7 @@ public final class DisBotVelocity {
                             CommandSource sender = invocation.source();
                             String[] args = invocation.arguments();
                             if (args.length == 0 || !args[0].equalsIgnoreCase("reload")) {
-                                sender.sendMessage(Component.text("Usage: disbot reload"));
+                                sender.sendMessage(Component.text("Usage: /disbot reload"));
                                 return;
                             }
                             reloadCallback.reload(() ->
@@ -60,5 +62,16 @@ public final class DisBotVelocity {
     @Subscribe
     public void onProxyShutdown(ProxyShutdownEvent event) {
         if (core != null) core.stop();
+    }
+
+    @Subscribe
+    public void onPlayerChat(PlayerChatEvent event) {
+        if (core == null) return;
+
+        String playerName = event.getPlayer().getUsername();
+        String message    = event.getMessage();
+        String prefix     = core.getProxy().getPlayerPrefix(playerName);
+
+        core.sendToDiscord(playerName, message, prefix);
     }
 }

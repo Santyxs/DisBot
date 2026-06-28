@@ -4,7 +4,9 @@ import db.xenova.core.CustomCommandLoader;
 import db.xenova.core.CustomCommandManager;
 import db.xenova.discord.PrefixCommandsListener;
 import db.xenova.discord.SlashCommandsListener;
+import db.xenova.discord.ChatBridgeListener;
 import db.xenova.platform.ProxyAdapter;
+import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.requests.GatewayIntent;
@@ -29,11 +31,50 @@ public final class DisBotCore {
     private CustomCommandLoader loader;
     private SlashCommandsListener slashListener;
 
+    // Bridge config — se inicializa en start()
+    private List<String> bridgeChannels = List.of();
+    private String mcToDiscordFormat    = "**{luckperms_prefix} {username}:** {message}";
+
     public DisBotCore(File dataFolder, Logger logger, ProxyAdapter proxy) {
         this.dataFolder = dataFolder;
         this.logger     = logger;
         this.proxy      = proxy;
     }
+
+    // ─── Getters públicos ─────────────────────────────────────────────────────
+
+    public ProxyAdapter getProxy() {
+        return proxy;
+    }
+
+    // ─── Bridge MC → Discord ──────────────────────────────────────────────────
+
+    public void sendToDiscord(String playerName, String message, String luckpermsPrefix) {
+        if (jda == null) return;
+        if (bridgeChannels.isEmpty()) return;
+
+        String formatted = mcToDiscordFormat
+                .replace("{username}", playerName)
+                .replace("{message}", message)
+                .replace("{luckperms_prefix}", luckpermsPrefix);
+
+        formatted = formatted.replaceAll("§[0-9a-fk-orA-FK-OR]", "");
+
+        final String finalFormatted = formatted;
+        for (String channelId : bridgeChannels) {
+            TextChannel channel = jda.getTextChannelById(channelId);
+            if (channel != null) {
+                channel.sendMessage(finalFormatted).queue(
+                        ok  -> logger.fine("[MC→Discord] " + finalFormatted),
+                        err -> logger.warning("[MC→Discord] Error en canal " + channelId + ": " + err.getMessage())
+                );
+            } else {
+                logger.warning("[MC→Discord] Canal no encontrado: " + channelId);
+            }
+        }
+    }
+
+    // ─── Ciclo de vida ────────────────────────────────────────────────────────
 
     public void start(Consumer<ReloadCallback> registerCommand) {
         logger.info("╔══════════════════════════╗");
@@ -47,11 +88,12 @@ public final class DisBotCore {
             return;
         }
 
+        // ── Config ────────────────────────────────────────────────────────────
         File configFile = new File(dataFolder, "config.yml");
         copyDefaultIfMissing(configFile, "config.yml");
 
         org.yaml.snakeyaml.Yaml yaml = new org.yaml.snakeyaml.Yaml();
-        java.util.Map<String, Object> config;
+        Map<String, Object> config;
         try (var in = new java.io.FileInputStream(configFile)) {
             config = yaml.load(in);
         } catch (IOException e) {
@@ -62,7 +104,12 @@ public final class DisBotCore {
         String token                 = getString(config, "discord-token", "");
         String prefix                = getString(config, "command-prefix", "db!");
         String botName               = getString(config, "bot-name", "DisBot");
-        List<String> allowedChannels = getStringList(config);
+        List<String> allowedChannels = getStringListByKey(config, "allowed-channels");
+        bridgeChannels               = getStringListByKey(config, "server-channel-id");
+        String discordToMcFormat     = getString(config, "discord-to-minecraft-format",
+                "&9[&bDC]&9 {role}  &c{username} &7: &f{message}");
+        mcToDiscordFormat            = getString(config, "minecraft-to-discord-format",
+                "**{luckperms_prefix} {username}:** {message}");
 
         if (token.isBlank() || token.equals("TOKEN-HERE")) {
             logger.severe("Please set 'discord-token' in config.yml.");
@@ -75,14 +122,22 @@ public final class DisBotCore {
             logger.info("Allowed channels: " + allowedChannels);
         }
 
+        if (bridgeChannels.isEmpty()) {
+            logger.warning("No bridge channels set (server-channel-id). Chat bridge MC→Discord disabled.");
+        } else {
+            logger.info("Bridge channels: " + bridgeChannels);
+        }
+
         logger.info("Platform: " + proxy.getPlatformName());
 
+        // ── Comandos personalizados ───────────────────────────────────────────
         CustomCommandManager commandManager = new CustomCommandManager();
         File commandsFolder = new File(dataFolder, "commands");
         copyDefaultCommandsIfMissing(commandsFolder);
         loader = new CustomCommandLoader(commandsFolder, commandManager, logger);
         loader.loadAll();
 
+        // ── Listeners de Discord ──────────────────────────────────────────────
         PrefixCommandsListener prefixListener = new PrefixCommandsListener(
                 prefix, botName, allowedChannels, commandManager, proxy, logger
         );
@@ -90,10 +145,17 @@ public final class DisBotCore {
                 botName, allowedChannels, commandManager, proxy, logger
         );
 
+        // Bridge Discord → Minecraft: escucha en bridgeChannels (o allowedChannels si no hay)
+        List<String> chatListenChannels = bridgeChannels.isEmpty() ? allowedChannels : bridgeChannels;
+        ChatBridgeListener chatBridgeListener = new ChatBridgeListener(
+                chatListenChannels, proxy, logger, discordToMcFormat
+        );
+
+        // ── Conexión JDA ──────────────────────────────────────────────────────
         try {
             jda = JDABuilder.createDefault(token)
                     .enableIntents(GatewayIntent.GUILD_MESSAGES, GatewayIntent.MESSAGE_CONTENT)
-                    .addEventListeners(prefixListener, slashListener)
+                    .addEventListeners(prefixListener, slashListener, chatBridgeListener)
                     .build()
                     .awaitReady();
 
@@ -117,6 +179,8 @@ public final class DisBotCore {
         logger.info("Plugin stopped.");
     }
 
+    // ─── Reload ───────────────────────────────────────────────────────────────
+
     @FunctionalInterface
     public interface ReloadCallback {
         void reload(Runnable onDone);
@@ -135,6 +199,8 @@ public final class DisBotCore {
                     onDone.run();
                 });
     }
+
+    // ─── Helpers privados ─────────────────────────────────────────────────────
 
     private void registerSlashCommands() {
         jda.updateCommands()
@@ -163,6 +229,7 @@ public final class DisBotCore {
                 return;
             }
             copyDefaultIfMissing(new File(commandsFolder, "example.yml"), "commands/example.yml");
+            copyDefaultIfMissing(new File(commandsFolder, "playerslist.yml"), "commands/playerslist.yml");
             copyDefaultIfMissing(new File(commandsFolder, "help.yml"), "commands/help.yml");
         }
     }
@@ -172,8 +239,8 @@ public final class DisBotCore {
         return (val instanceof String s) ? s : fallback;
     }
 
-    private static List<String> getStringList(Map<String, Object> map) {
-        Object val = map.get("allowed-channels");
+    private static List<String> getStringListByKey(Map<String, Object> map, String key) {
+        Object val = map.get(key);
         if (val instanceof List<?> list) {
             return list.stream()
                     .filter(e -> e instanceof String)
