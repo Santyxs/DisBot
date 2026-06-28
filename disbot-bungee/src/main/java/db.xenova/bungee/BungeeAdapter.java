@@ -36,9 +36,7 @@ public class BungeeAdapter implements ProxyAdapter {
     }
 
     public void broadcastMessage(String message) {
-        TextComponent component = new TextComponent(
-                TextComponent.fromLegacyText(message)
-        );
+        TextComponent component = new TextComponent(TextComponent.fromLegacy(message));
         proxy.broadcast(component);
     }
 

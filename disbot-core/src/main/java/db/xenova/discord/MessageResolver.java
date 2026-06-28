@@ -40,7 +40,7 @@ public final class MessageResolver {
         String playerList = players.isEmpty() ? "No players online" : String.join(", ", players);
         String date       = LocalDate.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
         String time       = LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm"));
-        String uptime     = formatUptime(System.currentTimeMillis() - proxy.getStartTime());
+        String uptime     = formatUptime(System.currentTimeMillis() - proxy.startTime());
 
         return text
                 .replace("{playerlist}", playerList)
