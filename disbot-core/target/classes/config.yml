@@ -34,6 +34,15 @@ join-embed-color: "#57F287"
 # Thumbnail of the join embed (optional, leave empty to not display any)
 join-embed-thumbnail: ""
 
+# Message sent when a player leaves the server (leave empty to disable)
+leave-embed-message: "**{username}** has left the server!"
+
+# Color of the leave embed (hexadecimal format, e.g., #ED4245)
+leave-embed-color: "#ED4245"
+
+# Thumbnail of the leave embed (optional, leave empty to not display any)
+leave-embed-thumbnail: ""
+
 # Message format for Discord (used for messages sent from Discord to Minecraft)
 discord-to-minecraft-format: "&9[&bDC]&9 {role}  &c{username} &1> &f{message}"
 
