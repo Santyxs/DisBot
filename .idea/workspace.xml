@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="DisBot:jar" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b6f52b4e-3169-4fd5-972a-ef194ae7f5d4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/disbot-parent.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/AICommit.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/copilot.data.migration.ask2agent.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/disbot-bungee/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/disbot-bungee/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/disbot-bungee/target/DisBot-BungeeCord.jar" beforeDir="false" afterPath="$PROJECT_DIR$/disbot-bungee/target/DisBot-BungeeCord.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/disbot-bungee/target/classes/db/xenova/bungee/BungeeAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/disbot-bungee/target/classes/db/xenova/bungee/BungeeAdapter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/disbot-bungee/target/classes/db/xenova/bungee/DisBotBungee$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/disbot-bungee/target/classes/db/xenova/bungee/DisBotBungee$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/disbot-bungee/target/classes/db/xenova/bungee/DisBotBungee.class" beforeDir="false" afterPath="$PROJECT_DIR$/disbot-bungee/target/classes/db/xenova/bungee/DisBotBungee.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/disbot-bungee/target/original-DisBot-BungeeCord.jar" beforeDir="false" afterPath="$PROJECT_DIR$/disbot-bungee/target/original-DisBot-BungeeCord.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/disbot-core/target/classes/commands/playerslist.yml" beforeDir="false" afterPath="$PROJECT_DIR$/disbot-core/target/classes/commands/playerslist.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/disbot-core/target/classes/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/disbot-core/target/classes/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/disbot-core/target/classes/db/xenova/DisBotCore.class" beforeDir="false" afterPath="$PROJECT_DIR$/disbot-core/target/classes/db/xenova/DisBotCore.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/disbot-core/target/classes/db/xenova/discord/MessageResolver.class" beforeDir="false" afterPath="$PROJECT_DIR$/disbot-core/target/classes/db/xenova/discord/MessageResolver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/disbot-core/target/classes/db/xenova/platform/ProxyAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/disbot-core/target/classes/db/xenova/platform/ProxyAdapter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/disbot-core/target/disbot-core-0.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/disbot-core/target/disbot-core-0.1.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/disbot-core/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/disbot-core/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/disbot-core/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/disbot-core/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/disbot-paper/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/disbot-paper/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/disbot-paper/target/DisBot-Paper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/disbot-paper/target/DisBot-Paper.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/disbot-paper/target/classes/db/xenova/paper/DisBotPaper.class" beforeDir="false" afterPath="$PROJECT_DIR$/disbot-paper/target/classes/db/xenova/paper/DisBotPaper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/disbot-paper/target/classes/db/xenova/paper/PaperAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/disbot-paper/target/classes/db/xenova/paper/PaperAdapter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/disbot-paper/target/original-DisBot-Paper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/disbot-paper/target/original-DisBot-Paper.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/disbot-velocity/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/disbot-velocity/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/disbot-velocity/target/DisBot-Velocity.jar" beforeDir="false" afterPath="$PROJECT_DIR$/disbot-velocity/target/DisBot-Velocity.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/disbot-velocity/target/classes/db/xenova/velocity/DisBotVelocity.class" beforeDir="false" afterPath="$PROJECT_DIR$/disbot-velocity/target/classes/db/xenova/velocity/DisBotVelocity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/disbot-velocity/target/classes/db/xenova/velocity/VelocityAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/disbot-velocity/target/classes/db/xenova/velocity/VelocityAdapter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/disbot-velocity/target/original-DisBot-Velocity.jar" beforeDir="false" afterPath="$PROJECT_DIR$/disbot-velocity/target/original-DisBot-Velocity.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CopilotChats">
+    <option name="panelChat">
+      <chat>
+        <option name="activeSessionId" value="eddc49e6-d359-4800-9fe6-5fe81f405b8f" />
+        <option name="sessions">
+          <session>
+            <option name="chatType" value="PANEL" />
+            <option name="id" value="eddc49e6-d359-4800-9fe6-5fe81f405b8f" />
+            <option name="modeId" value="Agent" />
+            <option name="modelType" value="builtin_family" />
+            <option name="modelValue" value="auto" />
+            <option name="targetType" value="LOCAL" />
+          </session>
+        </option>
+        <option name="type" value="PANEL" />
+      </chat>
+    </option>
+  </component>
+  <component name="CopilotPersistence">
+    <persistenceIdMap>
+      <entry key="_C:/Users/HP/Desktop/Proyectos/Minecraft Plugins/DisBot" value="324a9tlSmiVTL9shfRJfZJa0cI0" />
+    </persistenceIdMap>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {}
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Santyxs/DisBot&quot;,
+    &quot;accountId&quot;: &quot;3b39ad25-3515-4a3d-b986-cddff337f6f1&quot;
+  }
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="324a9tlSmiVTL9shfRJfZJa0cI0" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="false" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showScratchesAndConsoles" value="false" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "Maven.Unknown [package].executor": "Run",
+    "Maven.disbot-compiler.executor": "Run",
+    "Maven.disbot-core [package].executor": "Run",
+    "Maven.disbot-parent [clean].executor": "Run",
+    "Maven.disbot-parent [package].executor": "Run",
+    "Maven.disbot.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "copilot.chat.legacySessionMetadata.migrated": "true",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/HP/Desktop/Proyectos/Minecraft Plugins/DisBot/disbot-core/src/main/resources/commands",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/HP/Desktop/Proyectos/Minecraft Plugins/DisBot/src/Main.java",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\HP\Desktop\Proyectos\Minecraft Plugins\DisBot\disbot-core\src\main\resources\commands" />
+      <recent name="C:\Users\HP\Desktop\Proyectos\Minecraft Plugins\DisBot" />
+      <recent name="C:\Users\HP\Desktop\Proyectos\Minecraft Plugins\DisBot\src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\HP\Desktop\Proyectos\Minecraft Plugins\DisBot\disbot-velocity\src\main\java\db.xenova\velocity" />
+      <recent name="C:\Users\HP\Desktop\Proyectos\Minecraft Plugins\DisBot\disbot-bungee\src\main\java\db.xenova\bungee" />
+      <recent name="C:\Users\HP\Desktop\Proyectos\Minecraft Plugins\DisBot\disbot-velocity\src\main\java\db.xenova" />
+      <recent name="C:\Users\HP\Desktop\Proyectos\Minecraft Plugins\DisBot" />
+      <recent name="C:\Users\HP\Desktop\Proyectos\Minecraft Plugins\DisBot\disbot-core" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="disbot-compiler" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="cmdOptions" />
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="clean" />
+                <option value="package" />
+              </list>
+            </option>
+            <option name="multimoduleDir" />
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-37e91769500f-intellij.indexing.shared.core-IU-261.25134.95" />
+        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-IU-261.25134.95" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b6f52b4e-3169-4fd5-972a-ef194ae7f5d4" name="Changes" comment="" />
+      <created>1756682152859</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1756682152859</updated>
+    </task>
+    <task id="LOCAL-00001" summary="First commit">
+      <option name="closed" value="true" />
+      <created>1772850390098</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1772850390098</updated>
+    </task>
+    <task id="LOCAL-00002" summary="First commit">
+      <option name="closed" value="true" />
+      <created>1772850642992</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1772850642992</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add exclusion for opus-java in JDA dependency">
+      <option name="closed" value="true" />
+      <created>1772863699918</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1772863699918</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Refactor pom.xml to streamline dependencies and enable jar minimization">
+      <option name="closed" value="true" />
+      <created>1772864841360</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1772864841360</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Adds footer and thumbnail fields to custom command embeds.">
+      <option name="closed" value="true" />
+      <created>1773541038222</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1773541038223</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Adds dynamic command variables and a player list command.">
+      <option name="closed" value="true" />
+      <created>1773545299606</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1773545299606</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Adds image field to custom command embeds.">
+      <option name="closed" value="true" />
+      <created>1773545664706</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1773545664706</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Adds image field to custom command embeds.">
+      <option name="closed" value="true" />
+      <created>1773545714777</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1773545714777</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Standardizes `image` field name across command embeds.">
+      <option name="closed" value="true" />
+      <created>1773546031442</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1773546031442</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Adds image field to playerslist and help commands; refines help message.">
+      <option name="closed" value="true" />
+      <created>1773546328502</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1773546328502</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Improves playerslist command message readability and style.">
+      <option name="closed" value="true" />
+      <created>1773547740424</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1773547740424</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Introduces a bidirectional chat bridge between Minecraft and Discord.">
+      <option name="closed" value="true" />
+      <created>1782676998260</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1782676998260</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Modernizes BungeeCord API calls and adds LuckPerms API dependency.">
+      <option name="closed" value="true" />
+      <created>1782677788145</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1782677788145</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="First commit" />
+    <MESSAGE value="Add exclusion for opus-java in JDA dependency" />
+    <MESSAGE value="Refactor pom.xml to streamline dependencies and enable jar minimization" />
+    <MESSAGE value="Adds footer and thumbnail fields to custom command embeds." />
+    <MESSAGE value="Adds dynamic command variables and a player list command." />
+    <MESSAGE value="Merge remote-tracking branch 'main/master'&#10;&#10;# Conflicts:&#10;#&#9;disbot-core/src/main/java/db/xenova/core/CustomCommandLoader.java&#10;#&#9;disbot-core/src/main/resources/commands/example.yml" />
+    <MESSAGE value="Adds image field to custom command embeds." />
+    <MESSAGE value="Standardizes `image` field name across command embeds." />
+    <MESSAGE value="Adds image field to playerslist and help commands; refines help message." />
+    <MESSAGE value="Translates `playerslist` command message to Spanish and improves" />
+    <MESSAGE value="Translates `playerslist` command message to Spanish and improves display." />
+    <MESSAGE value="Im" />
+    <MESSAGE value="Improves playerslist command message readability and style." />
+    <MESSAGE value="Introduces a bidirectional chat bridge between Minecraft and Discord." />
+    <MESSAGE value="{&#13;&#10;  &quot;error&quot;: {&#13;&#10;    &quot;code&quot;: 503,&#13;&#10;    &quot;message&quot;: &quot;This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.&quot;,&#13;&#10;    &quot;status&quot;: &quot;UNAVAILABLE&quot;&#13;&#10;  }&#13;&#10;}" />
+    <MESSAGE value="Modernizes BungeeCord API calls and adds LuckPerms API dependency." />
+    <MESSAGE value="Adds chat bridge settings" />
+    <MESSAGE value="Adds chat bridge settings, centralizes build config, and updates playerslist." />
+    <option name="LAST_COMMIT_MESSAGE" value="Adds chat bridge settings, centralizes build config, and updates playerslist." />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+  <component name="github-copilot-workspace">
+    <instructionFileLocations>
+      <option value=".github/instructions" />
+    </instructionFileLocations>
+    <promptFileLocations>
+      <option value=".github/prompts" />
+    </promptFileLocations>
+  </component>
+</project>

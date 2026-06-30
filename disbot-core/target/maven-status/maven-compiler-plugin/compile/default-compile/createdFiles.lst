@@ -6,4 +6,5 @@ db\xenova\discord\SlashCommandsListener.class
 db\xenova\DisBotCore$ReloadCallback.class
 db\xenova\core\CustomCommandLoader.class
 db\xenova\discord\PrefixCommandsListener.class
+db\xenova\discord\ChatBridgeListener.class
 db\xenova\platform\ProxyAdapter.class

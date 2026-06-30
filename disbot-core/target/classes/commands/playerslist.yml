@@ -8,7 +8,10 @@ name: "players"
 aliases: []
 description: "Shows the list of online players on the Minecraft server"
 
-message: "**Online Players ({players}):**\n{playerlist}"
+message: |-
+  👥 **Online players:** ({players})
+  
+  ``{playerlist}``
 
 footer: "{date} - {time}"
 
