@@ -4,6 +4,7 @@ import com.google.inject.Inject;
 import com.velocitypowered.api.command.CommandSource;
 import com.velocitypowered.api.command.SimpleCommand;
 import com.velocitypowered.api.event.Subscribe;
+import com.velocitypowered.api.event.connection.DisconnectEvent;
 import com.velocitypowered.api.event.connection.PostLoginEvent;
 import com.velocitypowered.api.event.player.PlayerChatEvent;
 import com.velocitypowered.api.event.proxy.ProxyInitializeEvent;
@@ -23,6 +24,7 @@ import java.util.logging.Logger;
         version = "0.1",
         authors = {"xenova"}
 )
+@SuppressWarnings("unused")
 public final class DisBotVelocity {
 
     private final ProxyServer proxy;
@@ -80,5 +82,11 @@ public final class DisBotVelocity {
     public void onJoin(PostLoginEvent event) {
         if (core == null) return;
         core.sendJoinEmbed(event.getPlayer().getUsername());
+    }
+
+    @Subscribe
+    public void onDisconnect(DisconnectEvent event) {
+        if (core == null) return;
+        core.sendLeaveEmbed(event.getPlayer().getUsername());
     }
 }

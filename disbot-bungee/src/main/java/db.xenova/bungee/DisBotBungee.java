@@ -4,12 +4,14 @@ import db.xenova.DisBotCore;
 import net.md_5.bungee.api.chat.TextComponent;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
 import net.md_5.bungee.api.event.ChatEvent;
+import net.md_5.bungee.api.event.PlayerDisconnectEvent;
 import net.md_5.bungee.api.event.PostLoginEvent;
 import net.md_5.bungee.api.plugin.Command;
 import net.md_5.bungee.api.plugin.Listener;
 import net.md_5.bungee.api.plugin.Plugin;
 import net.md_5.bungee.event.EventHandler;
 
+@SuppressWarnings("unused")
 public final class DisBotBungee extends Plugin implements Listener {
 
     private DisBotCore core;
@@ -57,5 +59,11 @@ public final class DisBotBungee extends Plugin implements Listener {
     public void onJoin(PostLoginEvent event) {
         if (core == null) return;
         core.sendJoinEmbed(event.getPlayer().getName());
+    }
+
+    @EventHandler
+    public void onDisconnect(PlayerDisconnectEvent event) {
+        if (core == null) return;
+        core.sendLeaveEmbed(event.getPlayer().getName());
     }
 }

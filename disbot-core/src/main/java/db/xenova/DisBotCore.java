@@ -41,13 +41,18 @@ public final class DisBotCore {
     private String joinEmbedColor       = "#57F287";
     private String joinEmbedThumbnail   = "";
 
+    private boolean leaveEmbedEnabled   = false;
+    private String leaveEmbedMessage    = "**{username}** ha salido del servidor.";
+    private String leaveEmbedColor      = "#ED4245";
+    private String leaveEmbedThumbnail  = "";
+
     public DisBotCore(File dataFolder, Logger logger, ProxyAdapter proxy) {
         this.dataFolder = dataFolder;
         this.logger     = logger;
         this.proxy      = proxy;
     }
 
-    // ─── Getters públicos ─────────────────────────────────────────────────────
+    // ─── Getters ─────────────────────────────────────────────────────
 
     public ProxyAdapter getProxy() {
         return proxy;
@@ -80,18 +85,26 @@ public final class DisBotCore {
         }
     }
 
-    // ─── Join embed MC → Discord ──────────────────────────────────────────────
+    // ─── Join / Leave embeds MC → Discord ─────────────────────────────────────
 
     public void sendJoinEmbed(String playerName) {
+        sendStatusEmbed(joinEmbedEnabled, joinEmbedMessage, joinEmbedColor, joinEmbedThumbnail, playerName, "Join");
+    }
+
+    public void sendLeaveEmbed(String playerName) {
+        sendStatusEmbed(leaveEmbedEnabled, leaveEmbedMessage, leaveEmbedColor, leaveEmbedThumbnail, playerName, "Leave");
+    }
+
+    private void sendStatusEmbed(boolean enabled, String message, String hexColor, String thumbnail, String playerName, String logLabel) {
         if (jda == null) return;
-        if (!joinEmbedEnabled) return;
+        if (!enabled) return;
         if (bridgeChannels.isEmpty()) return;
 
-        String description = joinEmbedMessage.replace("{username}", playerName);
+        String description = message.replace("{username}", playerName);
 
         Color color;
         try {
-            color = Color.decode(joinEmbedColor);
+            color = Color.decode(hexColor);
         } catch (NumberFormatException e) {
             color = Color.decode("#57F287");
         }
@@ -100,16 +113,16 @@ public final class DisBotCore {
                 .setDescription(description)
                 .setColor(color);
 
-        if (!joinEmbedThumbnail.isBlank()) {
-            embed.setThumbnail(joinEmbedThumbnail);
+        if (!thumbnail.isBlank()) {
+            embed.setThumbnail(thumbnail);
         }
 
         for (String channelId : bridgeChannels) {
             TextChannel channel = jda.getTextChannelById(channelId);
             if (channel != null) {
                 channel.sendMessageEmbeds(embed.build()).queue(
-                        ok  -> logger.fine("[MC→Discord] Join embed: " + playerName),
-                        err -> logger.warning("[MC→Discord] Error enviando join embed: " + err.getMessage())
+                        ok  -> logger.fine("[MC→Discord] " + logLabel + " embed: " + playerName),
+                        err -> logger.warning("[MC→Discord] Error enviando " + logLabel + " embed: " + err.getMessage())
                 );
             } else {
                 logger.warning("[MC→Discord] Canal no encontrado: " + channelId);
@@ -117,7 +130,7 @@ public final class DisBotCore {
         }
     }
 
-    // ─── Ciclo de vida ────────────────────────────────────────────────────────
+    // ─── Life Cycle ────────────────────────────────────────────────────────
 
     public void start(Consumer<ReloadCallback> registerCommand) {
         logger.info("╔══════════════════════════╗");
@@ -151,10 +164,14 @@ public final class DisBotCore {
         bridgeChannels               = getStringListByKey(config, "server-channel-id");
         String discordToMcFormat     = getString(config, "discord-to-minecraft-format", "&9[&bDC]&9 {role}  &c{username} &7: &f{message}");
         mcToDiscordFormat            = getString(config, "minecraft-to-discord-format", "**{luckperms_prefix} {username}:** {message}");
-        joinEmbedEnabled             = getBoolean(config);
+        joinEmbedEnabled             = getBoolean(config, "join-embed-enabled");
         joinEmbedMessage             = getString(config, "join-embed-message", "**{username}** se ha unido al servidor.");
         joinEmbedColor               = getString(config, "join-embed-color", "#57F287");
         joinEmbedThumbnail           = getString(config, "join-embed-thumbnail", "");
+        leaveEmbedEnabled            = getBoolean(config, "leave-embed-enabled");
+        leaveEmbedMessage            = getString(config, "leave-embed-message", "**{username}** ha salido del servidor.");
+        leaveEmbedColor              = getString(config, "leave-embed-color", "#ED4245");
+        leaveEmbedThumbnail          = getString(config, "leave-embed-thumbnail", "");
 
         if (token.isBlank() || token.equals("TOKEN-HERE")) {
             logger.severe("Please set 'discord-token' in config.yml.");
@@ -175,14 +192,14 @@ public final class DisBotCore {
 
         logger.info("Platform: " + proxy.getPlatformName());
 
-        // ── Comandos personalizados ───────────────────────────────────────────
+        // ── Custom Commands ───────────────────────────────────────────
         CustomCommandManager commandManager = new CustomCommandManager();
         File commandsFolder = new File(dataFolder, "commands");
         copyDefaultCommandsIfMissing(commandsFolder);
         loader = new CustomCommandLoader(commandsFolder, commandManager, logger);
         loader.loadAll();
 
-        // ── Listeners de Discord ──────────────────────────────────────────────
+        // ── Discord Listeners ──────────────────────────────────────────────
         PrefixCommandsListener prefixListener = new PrefixCommandsListener(
                 prefix, botName, allowedChannels, commandManager, proxy, logger
         );
@@ -190,13 +207,12 @@ public final class DisBotCore {
                 botName, allowedChannels, commandManager, proxy, logger
         );
 
-        // Bridge Discord → Minecraft: escucha en bridgeChannels (o allowedChannels si no hay)
         List<String> chatListenChannels = bridgeChannels.isEmpty() ? allowedChannels : bridgeChannels;
         ChatBridgeListener chatBridgeListener = new ChatBridgeListener(
                 chatListenChannels, proxy, logger, discordToMcFormat
         );
 
-        // ── Conexión JDA ──────────────────────────────────────────────────────
+        // ── Connection JDA ──────────────────────────────────────────────────────
         try {
             jda = JDABuilder.createDefault(token)
                     .enableIntents(GatewayIntent.GUILD_MESSAGES, GatewayIntent.MESSAGE_CONTENT)
@@ -245,7 +261,7 @@ public final class DisBotCore {
                 });
     }
 
-    // ─── Helpers privados ─────────────────────────────────────────────────────
+    // ─── Helpers ─────────────────────────────────────────────────────
 
     private void registerSlashCommands() {
         jda.updateCommands()
@@ -284,8 +300,8 @@ public final class DisBotCore {
         return (val instanceof String s) ? s : fallback;
     }
 
-    private static boolean getBoolean(Map<String, Object> map) {
-        Object val = map.get("join-embed-enabled");
+    private static boolean getBoolean(Map<String, Object> map, String key) {
+        Object val = map.get(key);
         return (val instanceof Boolean b) ? b : false;
     }
 
