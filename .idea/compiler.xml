@@ -10,9 +10,6 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="disbot-bungee" />
-        <module name="disbot-paper" />
-        <module name="disbot-core" />
       </profile>
       <profile name="Annotation profile for disbot-parent" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -96,7 +93,6 @@
           <entry name="$MAVEN_REPOSITORY$/com/github/ben-manes/caffeine/caffeine/3.2.3/caffeine-3.2.3.jar" />
           <entry name="$MAVEN_REPOSITORY$/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar" />
         </processorPath>
-        <module name="disbot-velocity" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

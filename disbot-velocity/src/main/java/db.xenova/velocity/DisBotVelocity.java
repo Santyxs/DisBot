@@ -4,6 +4,7 @@ import com.google.inject.Inject;
 import com.velocitypowered.api.command.CommandSource;
 import com.velocitypowered.api.command.SimpleCommand;
 import com.velocitypowered.api.event.Subscribe;
+import com.velocitypowered.api.event.connection.PostLoginEvent;
 import com.velocitypowered.api.event.player.PlayerChatEvent;
 import com.velocitypowered.api.event.proxy.ProxyInitializeEvent;
 import com.velocitypowered.api.event.proxy.ProxyShutdownEvent;
@@ -73,5 +74,11 @@ public final class DisBotVelocity {
         String prefix     = core.getProxy().getPlayerPrefix(playerName);
 
         core.sendToDiscord(playerName, message, prefix);
+    }
+
+    @Subscribe
+    public void onJoin(PostLoginEvent event) {
+        if (core == null) return;
+        core.sendJoinEmbed(event.getPlayer().getUsername());
     }
 }

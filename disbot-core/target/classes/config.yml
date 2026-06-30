@@ -25,6 +25,15 @@ server-channel-id:
   - "YOUR_CHANNEL_ID_HERE"
   - "YOUR_CHANNEL_ID_HERE"
 
+# Message sent when a player joins the server (leave empty to disable)
+join-embed-message: "**{username}** has joined the server!"
+
+# Color of the join embed (hexadecimal format, e.g., #57F287)
+join-embed-color: "#57F287"
+
+# Thumbnail of the join embed (optional, leave empty to not display any)
+join-embed-thumbnail: ""
+
 # Message format for Discord (used for messages sent from Discord to Minecraft)
 discord-to-minecraft-format: "&9[&bDC]&9 {role}  &c{username} &1> &f{message}"
 

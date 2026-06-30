@@ -10,42 +10,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6f52b4e-3169-4fd5-972a-ef194ae7f5d4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/disbot-parent.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/AICommit.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/copilot.data.migration.ask2agent.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/disbot-bungee/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/disbot-bungee/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/disbot-bungee/src/main/java/db.xenova/bungee/DisBotBungee.java" beforeDir="false" afterPath="$PROJECT_DIR$/disbot-bungee/src/main/java/db.xenova/bungee/DisBotBungee.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/disbot-bungee/target/DisBot-BungeeCord.jar" beforeDir="false" afterPath="$PROJECT_DIR$/disbot-bungee/target/DisBot-BungeeCord.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/disbot-bungee/target/classes/db/xenova/bungee/BungeeAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/disbot-bungee/target/classes/db/xenova/bungee/BungeeAdapter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/disbot-bungee/target/classes/db/xenova/bungee/DisBotBungee$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/disbot-bungee/target/classes/db/xenova/bungee/DisBotBungee$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/disbot-bungee/target/classes/db/xenova/bungee/DisBotBungee.class" beforeDir="false" afterPath="$PROJECT_DIR$/disbot-bungee/target/classes/db/xenova/bungee/DisBotBungee.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/disbot-bungee/target/original-DisBot-BungeeCord.jar" beforeDir="false" afterPath="$PROJECT_DIR$/disbot-bungee/target/original-DisBot-BungeeCord.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/disbot-core/target/classes/commands/playerslist.yml" beforeDir="false" afterPath="$PROJECT_DIR$/disbot-core/target/classes/commands/playerslist.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/disbot-core/src/main/java/db/xenova/DisBotCore.java" beforeDir="false" afterPath="$PROJECT_DIR$/disbot-core/src/main/java/db/xenova/DisBotCore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/disbot-core/src/main/resources/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/disbot-core/src/main/resources/config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/disbot-core/target/classes/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/disbot-core/target/classes/config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/disbot-core/target/classes/db/xenova/DisBotCore.class" beforeDir="false" afterPath="$PROJECT_DIR$/disbot-core/target/classes/db/xenova/DisBotCore.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/disbot-core/target/classes/db/xenova/discord/MessageResolver.class" beforeDir="false" afterPath="$PROJECT_DIR$/disbot-core/target/classes/db/xenova/discord/MessageResolver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/disbot-core/target/classes/db/xenova/platform/ProxyAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/disbot-core/target/classes/db/xenova/platform/ProxyAdapter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/disbot-core/target/disbot-core-0.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/disbot-core/target/disbot-core-0.1.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/disbot-core/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/disbot-core/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/disbot-core/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/disbot-core/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/disbot-paper/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/disbot-paper/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/disbot-paper/src/main/java/db.xenova/paper/DisBotPaper.java" beforeDir="false" afterPath="$PROJECT_DIR$/disbot-paper/src/main/java/db.xenova/paper/DisBotPaper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/disbot-paper/target/DisBot-Paper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/disbot-paper/target/DisBot-Paper.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/disbot-paper/target/classes/db/xenova/paper/DisBotPaper.class" beforeDir="false" afterPath="$PROJECT_DIR$/disbot-paper/target/classes/db/xenova/paper/DisBotPaper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/disbot-paper/target/classes/db/xenova/paper/PaperAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/disbot-paper/target/classes/db/xenova/paper/PaperAdapter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/disbot-paper/target/original-DisBot-Paper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/disbot-paper/target/original-DisBot-Paper.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/disbot-velocity/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/disbot-velocity/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/disbot-velocity/src/main/java/db.xenova/velocity/DisBotVelocity.java" beforeDir="false" afterPath="$PROJECT_DIR$/disbot-velocity/src/main/java/db.xenova/velocity/DisBotVelocity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/disbot-velocity/target/DisBot-Velocity.jar" beforeDir="false" afterPath="$PROJECT_DIR$/disbot-velocity/target/DisBot-Velocity.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/disbot-velocity/target/classes/db/xenova/velocity/DisBotVelocity.class" beforeDir="false" afterPath="$PROJECT_DIR$/disbot-velocity/target/classes/db/xenova/velocity/DisBotVelocity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/disbot-velocity/target/classes/db/xenova/velocity/VelocityAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/disbot-velocity/target/classes/db/xenova/velocity/VelocityAdapter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/disbot-velocity/target/original-DisBot-Velocity.jar" beforeDir="false" afterPath="$PROJECT_DIR$/disbot-velocity/target/original-DisBot-Velocity.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +78,7 @@
   }
 }</component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -107,38 +90,38 @@
     <option name="showLibraryContents" value="true" />
     <option name="showScratchesAndConsoles" value="false" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
-    "Maven.Unknown [package].executor": "Run",
-    "Maven.disbot-compiler.executor": "Run",
-    "Maven.disbot-core [package].executor": "Run",
-    "Maven.disbot-parent [clean].executor": "Run",
-    "Maven.disbot-parent [package].executor": "Run",
-    "Maven.disbot.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "copilot.chat.legacySessionMetadata.migrated": "true",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/HP/Desktop/Proyectos/Minecraft Plugins/DisBot/disbot-core/src/main/resources/commands",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/HP/Desktop/Proyectos/Minecraft Plugins/DisBot/src/Main.java",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Unknown [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.disbot-compiler.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.disbot-core [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.disbot-parent [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.disbot-parent [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.disbot.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;copilot.chat.legacySessionMetadata.migrated&quot;: &quot;true&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/HP/Desktop/Proyectos/Minecraft Plugins/DisBot/disbot-core/src/main/resources/commands&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/HP/Desktop/Proyectos/Minecraft Plugins/DisBot/src/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\HP\Desktop\Proyectos\Minecraft Plugins\DisBot\disbot-core\src\main\resources\commands" />
@@ -306,7 +289,15 @@
       <option name="project" value="LOCAL" />
       <updated>1782677788145</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Centralizes Maven build config and adds chat bridge options.">
+      <option name="closed" value="true" />
+      <created>1782782462609</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1782782462610</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -327,11 +318,12 @@
     <MESSAGE value="Im" />
     <MESSAGE value="Improves playerslist command message readability and style." />
     <MESSAGE value="Introduces a bidirectional chat bridge between Minecraft and Discord." />
-    <MESSAGE value="{&#13;&#10;  &quot;error&quot;: {&#13;&#10;    &quot;code&quot;: 503,&#13;&#10;    &quot;message&quot;: &quot;This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.&quot;,&#13;&#10;    &quot;status&quot;: &quot;UNAVAILABLE&quot;&#13;&#10;  }&#13;&#10;}" />
     <MESSAGE value="Modernizes BungeeCord API calls and adds LuckPerms API dependency." />
     <MESSAGE value="Adds chat bridge settings" />
     <MESSAGE value="Adds chat bridge settings, centralizes build config, and updates playerslist." />
-    <option name="LAST_COMMIT_MESSAGE" value="Adds chat bridge settings, centralizes build config, and updates playerslist." />
+    <MESSAGE value="Centralizes Maven build config and adds chat bridge options." />
+    <MESSAGE value="{&#13;&#10;  &quot;error&quot;: {&#13;&#10;    &quot;code&quot;: 503,&#13;&#10;    &quot;message&quot;: &quot;This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.&quot;,&#13;&#10;    &quot;status&quot;: &quot;UNAVAILABLE&quot;&#13;&#10;  }&#13;&#10;}" />
+    <option name="LAST_COMMIT_MESSAGE" value="{&#13;&#10;  &quot;error&quot;: {&#13;&#10;    &quot;code&quot;: 503,&#13;&#10;    &quot;message&quot;: &quot;This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.&quot;,&#13;&#10;    &quot;status&quot;: &quot;UNAVAILABLE&quot;&#13;&#10;  }&#13;&#10;}" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
